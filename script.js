@@ -115,17 +115,7 @@ function weaponSelect(user, bot) {
   
 }
 
-// function rpcGame() {
-//   let gameInPlay = true
-  
-  
 
-    
-  // while (gameInPlay) {
-  // }
-// }
-
-// rpcGame()
 
 weaponSelect(user = false, bot = true)
 
