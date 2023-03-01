@@ -16,43 +16,13 @@ Draws: 0
 
 function rpcGame() {
   let gameInPlay = true
+  const scores = {
+    Player : 0,
+    Bot : 0,
+    Draws : 0
+  }
 
   while (gameInPlay) {
-    const scores = {
-      Player : 0,
-      Bot : 0,
-      Draws : 0
-    }
-
-    
-      
-    let rpcUserInput = prompt(`Player: ${scores.Player} Bot: ${scores.Bot} Draws: ${scores.Draws} \n[1] Rock \n[2] Paper \n[3] Scissor \n[Q]uit`)
-    let userWeapon = undefined
-    
-    if (rpcUserInput === "1") {
-      alert("You have picked Rock")
-      userWeapon = 'R'
-    }
-
-    else if (rpcUserInput === "2") {
-      alert("You have picked Paper")
-      userWeapon = 'P'
-    }
-        
-    else if (rpcUserInput === "3") {
-      alert("You have picked Scissor")
-      userWeapon = 'S'
-    }
-
-    else if (rpcUserInput.toUpperCase() == "Q") {
-      alert("Exiting game")
-      gameInPlay = !gameInPlay
-    }
-        
-    else {
-      alert("INVALID INPUT")
-      console.error("INVALID INPUT")
-    }
   
   
     let botWeapon = null
@@ -117,9 +87,38 @@ function rpcGame() {
       }
     }
 
+
+    let rpcUserInput = prompt(`Player: ${scores.Player} Bot: ${scores.Bot} Draws: ${scores.Draws} \n[1] Rock \n[2] Paper \n[3] Scissor \n[Q]uit`)
+    let userWeapon = undefined
+    
+    if (rpcUserInput === "1") {
+      alert("You have picked Rock")
+      userWeapon = 'R'
+    }
+
+    else if (rpcUserInput === "2") {
+      alert("You have picked Paper")
+      userWeapon = 'P'
+    }
+        
+    else if (rpcUserInput === "3") {
+      alert("You have picked Scissor")
+      userWeapon = 'S'
+    }
+
+    else if (rpcUserInput.toUpperCase() == "Q") {
+      alert("Exiting game")
+      gameInPlay = !gameInPlay
+    }
+        
+    else {
+      alert("INVALID INPUT")
+      console.error("INVALID INPUT")
+    }
+
     
     botWeaponSelect()
-    gameRules()
+    gameRules(userWeapon,botWeapon)
   }
 }
 
