@@ -1,19 +1,3 @@
-/* 
-
-logic table:
-  rock v rock: draw
-  paper v paper: draw
-  scissor v scissor: draw
-
-  rock v scissor: rock wins
-  scissor v paper: scissor wins
-  paper v rock: paper wins
-
-Player score: 0
-Bot score: 0
-Draws: 0
-*/
-
 function rpcGame() {
   let gameInPlay = true
   const scores = {
@@ -125,33 +109,3 @@ function rpcGame() {
 }
 
 rpcGame()
-
-
-
-// if (rpcUserInput === "1") {
-//   alert("user has picked Rock")
-// }
-
-// else if (rpcUserInput === "2") {
-//   alert("user has picked Paper")
-// }
-    
-// else if (rpcUserInput === "3") {
-//   alert("user has picked Scissor")
-// }
-
-// else if (rpcUserInput.toUpperCase() == "Q") {
-//   alert("Exiting game")
-//   gameInPlay = !gameInPlay
-//   console.log(gameInPlay)
-// }
-    
-// else {
-//   alert("INVALID INPUT")
-//   console.error("INVALID INPUT")
-// }
-
-
-
-
-// function rock
