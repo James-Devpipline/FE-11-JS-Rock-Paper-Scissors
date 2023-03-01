@@ -29,7 +29,6 @@ function rpcGame() {
     function botWeaponSelect() {
       if (gameInPlay) {
         const botWeaponNum = Math.floor(Math.random() * (4 - 1) + 1)
-        console.log(botWeaponNum)
 
         if (botWeaponNum === 1){
           botWeapon = "R"
@@ -88,7 +87,7 @@ function rpcGame() {
     }
 
 
-    let rpcUserInput = prompt(`Player: ${scores.Player} Bot: ${scores.Bot} Draws: ${scores.Draws} \n[1] Rock \n[2] Paper \n[3] Scissor \n[Q]uit`)
+    let rpcUserInput = prompt(`Player: ${scores.Player} Bot: ${scores.Bot} Draw: ${scores.Draws} \n[1] Rock \n[2] Paper \n[3] Scissor \n[Q]uit`)
     let userWeapon = undefined
     
     if (rpcUserInput === "1") {
@@ -107,7 +106,10 @@ function rpcGame() {
     }
 
     else if (rpcUserInput.toUpperCase() == "Q") {
+      console.log(`Player: ${scores.Player} \nBot: ${scores.Bot} \nDraw: ${scores.Draws}`)
       alert("Exiting game")
+      alert(`Player: ${scores.Player} \nBot: ${scores.Bot} \nDraw: ${scores.Draws} \n \n \nThese scores will be inside your browsers console log`)
+      
       gameInPlay = !gameInPlay
     }
         
