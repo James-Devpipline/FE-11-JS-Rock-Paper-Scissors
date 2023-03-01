@@ -50,32 +50,32 @@ function rpcGame() {
           scores.Draws ++
         }
 
-        else if (userWep.toUpperCase() === 'R' && botWep.toUpperCase()  === 'S') {
+        else if (userWep?.toUpperCase() === 'R' && botWep.toUpperCase()  === 'S') {
           alert("Rock beats Scissors! You win!")
           scores.Player ++
         }
         
-        else if (userWep.toUpperCase()  === 'S' && botWep.toUpperCase()  === 'R') {
+        else if (userWep?.toUpperCase()  === 'S' && botWep.toUpperCase()  === 'R') {
           alert("Rock beats Scissors! You lose!")
           scores.Bot ++
         }
 
-        else if (userWep.toUpperCase()  === 'S' && botWep.toUpperCase()  === 'P') {
+        else if (userWep?.toUpperCase()  === 'S' && botWep.toUpperCase()  === 'P') {
           alert("Scissors beat paper! You win!")
           scores.Player ++
         }
 
-        else if (userWep.toUpperCase()  === 'P' && botWep.toUpperCase()  === 'S') {
+        else if (userWep?.toUpperCase()  === 'P' && botWep.toUpperCase()  === 'S') {
           alert("Scissors beat paper! You lose!")
           scores.Bot ++
         }
 
-        else if (userWep.toUpperCase()  === 'P' && botWep.toUpperCase()  === 'R') {
+        else if (userWep?.toUpperCase()  === 'P' && botWep.toUpperCase()  === 'R') {
           alert("Paper beats Rock! You win!")
           scores.Player ++
         }
         
-        else if (userWep.toUpperCase()  === 'R' && botWep.toUpperCase()  === 'P') {
+        else if (userWep?.toUpperCase()  === 'R' && botWep.toUpperCase()  === 'P') {
           alert("Paper beats Rock! You lose!")
           scores.Bot ++
         }
@@ -101,7 +101,7 @@ function rpcGame() {
       userWeapon = 'S'
     }
 
-    else if (rpcUserInput.toUpperCase() == "Q") {
+    else if (rpcUserInput?.toUpperCase() == "Q") {
       console.log(`Player: ${scores.Player} \nBot: ${scores.Bot} \nDraw: ${scores.Draws}`)
       alert("Exiting game")
       alert(`Player: ${scores.Player} \nBot: ${scores.Bot} \nDraw: ${scores.Draws} \n \n \nThese scores will be inside your browsers console log`)
