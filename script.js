@@ -1,3 +1,14 @@
+/* 
+Project (soft deadline- Wed March 1st):
+Build a Rock, Paper, Scissors console style app:
+ - must route through some type of menu selections
+ - must have proper logic for wins and losses
+ - keep track of win loss history
+ - be able to play indefinitely and display the win loss record at the end of the program.
+ - be able to quit the game.
+*/
+
+
 function rpcGame() {
   let gameInPlay = true
   const scores = {
