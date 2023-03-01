@@ -13,6 +13,7 @@ Player score: 0
 Bot score: 0
 Draws: 0
 */
+
 function rpcGame() {
   let gameInPlay = true
 
@@ -25,25 +26,27 @@ function rpcGame() {
 
     
       
-    let rpcUserInput = prompt(`Player: ${scores.Player} Bot: ${scores.Bot} Draws: ${scores.Draws} [1] Rock \n[2] Paper \n[3] Scissor \n[Q]uit`)
+    let rpcUserInput = prompt(`Player: ${scores.Player} Bot: ${scores.Bot} Draws: ${scores.Draws} \n[1] Rock \n[2] Paper \n[3] Scissor \n[Q]uit`)
+    let userWeapon = undefined
     
     if (rpcUserInput === "1") {
-      alert("user has picked Rock")
+      alert("You have picked Rock")
+      userWeapon = 'R'
     }
 
     else if (rpcUserInput === "2") {
-      alert("user has picked Paper")
+      alert("You have picked Paper")
+      userWeapon = 'P'
     }
         
     else if (rpcUserInput === "3") {
-      alert("user has picked Scissor")
+      alert("You have picked Scissor")
+      userWeapon = 'S'
     }
 
     else if (rpcUserInput.toUpperCase() == "Q") {
       alert("Exiting game")
       gameInPlay = !gameInPlay
-      alert(gameInPlay)
-      console.log(gameInPlay)
     }
         
     else {
@@ -54,82 +57,69 @@ function rpcGame() {
   
     let botWeapon = null
     function botWeaponSelect() {
-      const botWeaponNum = Math.floor(Math.random() * (4 - 1) + 1)
-      console.log(botWeaponNum)
-      if (botWeaponNum === 1){
-        botWeapon = "R"
-      }
-  
-      else if (botWeaponNum === 2) {
-        botWeapon = "P"
-      }
-  
-      else if (botWeaponNum === 3) {
-        botWeapon = "S"
-      }
-      alert(botWeapon)
-    }
-      
-      
-      
-    
+      if (gameInPlay) {
+        const botWeaponNum = Math.floor(Math.random() * (4 - 1) + 1)
+        console.log(botWeaponNum)
 
+        if (botWeaponNum === 1){
+          botWeapon = "R"
+          alert("Bot has chosen Rock")
+        }
+    
+        else if (botWeaponNum === 2) {
+          botWeapon = "P"
+          alert("Bot has chosen Paper")
+        }
+    
+        else if (botWeaponNum === 3) {
+          botWeapon = "S"
+          alert("Bot has chosen Scissors")
+        }        
+      }
+    }
 
     function gameRules(userWep, botWep) {
-      if (userWep == botWep) {
-        alert("Draw!")
-        scores.Draws ++
-      }
+      if (gameInPlay) {
+        if (userWep == botWep) {
+          alert("Draw!")
+          scores.Draws ++
+        }
 
-      else if (userWep.toUpperCase() === 'R' && botWep.toUpperCase()  === 'S') {
-        alert("Rock beats Scissors! You win!")
-        scores.Player ++
-        // alert(`Player: ${scores.Player} Bot: ${scores.Bot} Draws: ${scores.Draws}`)
-      }
-      
-      else if (userWep.toUpperCase()  === 'S' && botWep.toUpperCase()  === 'R') {
-        alert("Rock beats Scissors! You lose!")
-        scores.Bot ++
-      }
+        else if (userWep.toUpperCase() === 'R' && botWep.toUpperCase()  === 'S') {
+          alert("Rock beats Scissors! You win!")
+          scores.Player ++
+        }
+        
+        else if (userWep.toUpperCase()  === 'S' && botWep.toUpperCase()  === 'R') {
+          alert("Rock beats Scissors! You lose!")
+          scores.Bot ++
+        }
 
-      else if (userWep.toUpperCase()  === 'S' && botWep.toUpperCase()  === 'P') {
-        alert("Scissors beat paper! You win!")
-        scores.Player ++
-      }
+        else if (userWep.toUpperCase()  === 'S' && botWep.toUpperCase()  === 'P') {
+          alert("Scissors beat paper! You win!")
+          scores.Player ++
+        }
 
-      else if (userWep.toUpperCase()  === 'P' && botWep.toUpperCase()  === 'S') {
-        alert("Scissors beat paper! You lose!")
-        scores.Bot ++
-      }
+        else if (userWep.toUpperCase()  === 'P' && botWep.toUpperCase()  === 'S') {
+          alert("Scissors beat paper! You lose!")
+          scores.Bot ++
+        }
 
-      else if (userWep.toUpperCase()  === 'P' && botWep.toUpperCase()  === 'R') {
-        alert("Paper beats Rock! You win!")
-        scores.Player ++
-      }
-      
-      else if (userWep.toUpperCase()  === 'R' && botWep.toUpperCase()  === 'P') {
-        alert("Paper beats Rock! You lose!")
-        scores.Bot ++
+        else if (userWep.toUpperCase()  === 'P' && botWep.toUpperCase()  === 'R') {
+          alert("Paper beats Rock! You win!")
+          scores.Player ++
+        }
+        
+        else if (userWep.toUpperCase()  === 'R' && botWep.toUpperCase()  === 'P') {
+          alert("Paper beats Rock! You lose!")
+          scores.Bot ++
+        }
       }
     }
 
-    function botRandomNum() {
-      return Math.floor(Math.random() * (4 - 1) + 1)
-    }
-
-    console.log(botRandomNum())
-
-
-  
-
-  
-  
-  
-  
-  
-  
-  
-  
+    
+    botWeaponSelect()
+    gameRules()
   }
 }
 
