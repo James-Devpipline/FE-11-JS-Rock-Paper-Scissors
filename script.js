@@ -11,6 +11,7 @@ Build a Rock, Paper, Scissors console style app:
 
 function rpcGame() {
   let gameInPlay = true
+  
   const scores = {
     Player : 0,
     Bot : 0,
